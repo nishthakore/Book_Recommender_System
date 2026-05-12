@@ -3,10 +3,17 @@ import pickle
 import numpy as np
 
 
-popular_df = pickle.load(open('popular.pkl', 'rb'))
-pt = pickle.load(open('pt.pkl', 'rb'))
-books = pickle.load(open('books.pkl', 'rb'))
-similarity_score = pickle.load(open('similarity_score.pkl', 'rb'))
+with open('popular.pkl', 'rb') as f:
+    popular_df = pickle.load(f)
+
+with open('pt.pkl', 'rb') as f:
+    pt = pickle.load(f)
+
+with open('books.pkl', 'rb') as f:
+    books = pickle.load(f)
+
+with open('similarity_score.pkl', 'rb') as f:
+    similarity_score = pickle.load(f)
 
 app = Flask(__name__)
 @app.route('/')
